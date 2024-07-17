@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3260af;
+    flex-direction: column;
+    transition: margin 0.75s linear;
+    color: aliceblue;
+    width: 100vw;
+    height: 100vh;
+}
+.screen.up {
+	margin-top: -100vh;
+}
+button{
+    padding:15px;
+    width: 100px;
+    height: 15px;
+    align-items: center;
+    display: flex;
+    justify-items: center;
+    cursor: pointer;
+
+
+}
+button:hover{
+    background: #e7c1c1;
+}
+
+h1{
+    font-size:xx-large;
+}
+
+.insects_list{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    }
+
+    .insects_list li{
+        margin: 10px;
+    }
+
+    .choose_insect_btn{
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Press Start 2P';
+        width: 150px;
+        height: 150px;
+    }
+    .choose_insect_btn img{
+        
+        width: 100px;
+        height: 100px;
+        padding: 3px;
+        object-fit: cover;
+        
+    }
+
+    .choose_insect_btn:active {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .game_container{
+        position: relative;
+    }
+    #time, #score{
+        position: absolute;
+        top: 20px;
+
+    }
+
+    
+@media screen and (max-width: 480px) {
+	#time,
+	#score {
+		font-size: 12px;
+	}
+}
+
+#time {
+	left: 20px;
+}
+
+#score {
+	right: 20px;
+}
+
+#annoying_message {
+	line-height: 1.6;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transition: transform 0.4s ease-in;
+	transform: translate(-50%, -150%);
+	opacity: 0;
+	text-align: center;
+	width: 100%;
+}
+
+#annoying_message.visible {
+	transform: translate(-50%, 100%);
+	opacity: 1;
+}
+
+
+.insect {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	transform: translate(-50%, -50%) scale(1);
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	transition: transform 0.3s ease-out;
+}
+
+.insect.catched {
+	transform: translate(-50%, -50%) scale(0);
+}
+
+.insect img {
+	object-fit: contain;
+	width: 100px;
+	height: 100px;
+}
